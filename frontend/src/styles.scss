@@ -1,0 +1,85 @@
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "assets/styles/variables";
+
+body {
+  margin: 0;
+  background-color: #F8FAFB;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+button:focus {
+  outline: none;
+}
+
+.button-primary {
+  border-radius: 20px !important;
+  background-color: $primary-button-color !important;
+  border-color: $primary-button-color;
+  color: $primary-button-font-color;
+  margin: 5px !important;
+
+  &:hover {
+    background-color: $primary-button-hover-color !important;
+    border-color: $primary-button-hover-color;
+    color: $primary-button-font-color;
+  }
+
+  &:active:focus {
+    box-shadow: $primary-button-shadow;
+  }
+
+  &:not(:disabled):not(.disabled):active:focus {
+    box-shadow: $primary-button-shadow;
+    background-color: $primary-button-color;
+    border-color: $primary-button-color;
+  }
+
+}
+
+.button-outline-secondary {
+  border-radius: 20px !important;
+  border: solid 1px $secondary-button-color !important;
+  color: $secondary-button-color !important;
+  margin: 5px !important;
+
+  &:hover {
+    background-color: $secondary-button-color !important;
+    border-color: $secondary-button-color !important;
+    color: white !important;
+  }
+}
+
+.cdk-overlay-container {
+  z-index: 2000 !important;
+}
+
+.mat-form-field {
+  width: 100% !important;
+}
+
+.mat-form-field-infix {
+  padding: .7rem 0 1rem 0 !important;
+}
+
+.auth-btn {
+  padding: 10px 70px !important;
+  font-weight: bold;
+}
+
+.white-icon {
+  color: white;
+}
+
+.wide-modal {
+  max-width: 800px;
+}
+
+.standard-modal {
+  width: 400px;
+}

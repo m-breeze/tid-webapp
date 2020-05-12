@@ -1,0 +1,58 @@
+<div class="main-wrap">
+
+  <div class="content-wrap">
+    <h2 class="auth-header">Login to Your Account</h2>
+    <h6 class="auth-subheader">We are happy to see you again</h6>
+
+    <div class="icons-container">
+      <img class="icon" src="../../../../../assets/media/login-green-icon.png">
+      <img class="icon" src="../../../../../assets/media/login-violet-icon.png">
+      <img class="icon" src="../../../../../assets/media/login-yellow-icon.png">
+    </div>
+    <div class="form" [formGroup]="form">
+
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input
+            matInput
+            formControlName="username"
+            placeholder="Enter username"
+            required
+          >
+          <mat-error>
+            Username is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            formControlName="password"
+            placeholder="Enter your password"
+            [type]="hidePassword ? 'password' : 'text'"
+          >
+          <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'">
+            <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error
+          >
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <button
+      mat-raised-button color="primary"
+      class="auth-btn button-primary auth-btn-submit"
+      (click)="onSubmit()"
+    >
+      Log in
+    </button>
+
+  </div>
+</div>

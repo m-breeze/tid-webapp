@@ -1,0 +1,25 @@
+<div class="modal-content">
+  <div class="image-view">
+    <img
+      [src]="event.img ? event.img : '/assets/media/event-icon.jpg'"
+    >
+  </div>
+  <div class="text-content">
+    <div class="header">
+      <p class="title">{{event.title}}</p>
+        <mat-menu #appMenu="matMenu">
+          <button mat-menu-item>Edit</button>
+          <button mat-menu-item (click)="deleteEvent(event.id)">Delete</button>
+        </mat-menu>
+
+        <button mat-icon-button [matMenuTriggerFor]="appMenu">
+          <mat-icon>more_horiz</mat-icon>
+        </button>
+    </div>
+    <div class="content">
+      <p class="description">{{event.description}}</p>
+      <p class="date">{{event.date | date:'d MMMM yyyy'}}</p>
+    </div>
+  </div>
+
+</div>

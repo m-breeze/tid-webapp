@@ -1,0 +1,207 @@
+@import '../../../../assets/styles/variables';
+
+.main-wrap {
+  height: 100vh;
+  width: 100%;
+  background-color: white;
+  margin-top: -$header-height;
+  position: absolute;
+
+  .logo {
+    position: absolute;
+    z-index: 1500;
+    top: 3%;
+    left: 2%;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    img {
+      height: 50px;
+      width: auto;
+    }
+  }
+
+  .close-icon {
+    z-index: 1050 !important;
+  }
+
+  .close-icon:hover {
+    cursor: pointer;
+  }
+
+  .auth-text-container {
+    position: absolute;
+    width: 30%;
+    z-index: 1000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .text-wrapper {
+      width: 70%;
+      text-align: center;
+      margin-top: 50vh;
+    }
+  }
+
+  .sign-up-text {
+    left: 70%;
+  }
+
+  .sign-in-text {
+    left: 0;
+  }
+
+  .color-container {
+    position: absolute;
+    width: 30%;
+    height: 100vh;
+    background-image: url("./../../../../assets/media/background.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+
+  }
+
+  .sign-in-wrap {
+    position: absolute;
+    width: 70%;
+    height: 100vh;
+    left: 0%;
+  }
+
+  .sign-up-wrap {
+    position: absolute;
+    width: 70%;
+    height: 100vh;
+    left: 30%;
+  }
+
+  .auth-btn {
+    padding: 5px 50px !important;
+    color: $primary-font-color !important;
+    background-color: white !important;
+    margin-top: 40vh;
+  }
+
+  .mat-icon {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    z-index: 1000;
+    font-size: 2rem !important;
+  }
+
+}
+
+.sign-up-wrap-animation {
+  animation: sign-up-wrap-animation $auth-animation-left-direction-delay;
+}
+
+.sign-in-wrap-animation {
+  animation: sign-in-wrap-animation $auth-animation-right-direction-delay;
+}
+
+.sign-up-text-animation {
+  animation: sign-up-text-animation $auth-animation-left-direction-delay;
+}
+
+.sign-in-wrap-animation {
+  animation: sign-in-text-animation $auth-animation-right-direction-delay;
+}
+
+.color-container-slide-right-animation {
+  left: 70% !important;
+  animation: color-container-slide-right $auth-animation-right-direction-delay;
+}
+
+.color-container-slide-left-animation {
+  left: 0 !important;
+  animation: color-container-slide-left $auth-animation-left-direction-delay;
+}
+
+@keyframes sign-in-text-animation {
+  0% {
+    left: -30%;
+  }
+
+  100% {
+    left: 0%;
+  }
+}
+
+@keyframes sign-up-text-animation {
+  0% {
+    left: 100%;
+  }
+
+  100% {
+    left: 70%;
+  }
+}
+
+@keyframes sign-in-wrap-animation {
+  0% {
+    left: 70%;
+  }
+
+  100% {
+    left: 0%;
+  }
+}
+
+@keyframes sign-up-wrap-animation {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: 30%;
+  }
+}
+
+@keyframes color-container-slide-right {
+  0% {
+    left: 0;
+  }
+
+  25% {
+    width: 70%;
+  }
+
+  75% {
+    width: 70%;
+  }
+
+  100% {
+    left: 70%;
+  }
+}
+
+@keyframes color-container-slide-left {
+  0% {
+    left: 70%;
+  }
+
+  25% {
+    width: 70%;
+  }
+
+  75% {
+    width: 70%;
+  }
+
+  100% {
+    left: 0%;
+  }
+}

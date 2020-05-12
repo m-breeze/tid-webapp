@@ -1,0 +1,47 @@
+@import "../../../../../assets/styles/mixins";
+@import "../../../../../assets/styles/variables";
+
+.main-wrap {
+  @include flex-center;
+  height: 100vh;
+
+  .auth-header {
+    font-size: 3rem;
+  }
+
+  .auth-subheader {
+    color: $secondary-color;
+  }
+
+  .content-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+  }
+
+  .form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-top: solid 2px ghostwhite;
+    margin-top: .5rem;
+    padding-top: 1rem;
+
+    > div {
+      flex: 0 0 45%;
+    }
+  }
+
+  .icons-container {
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+    padding: 1rem 0;
+
+    .icon {
+      height: 40px;
+      width: 40px;
+    }
+  }
+}

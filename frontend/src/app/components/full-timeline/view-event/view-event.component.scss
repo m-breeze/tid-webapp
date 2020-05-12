@@ -1,0 +1,69 @@
+@import "../../../../assets/styles/variables.scss";
+@import "../../../../assets/styles/mixins.scss";
+
+::ng-deep modal-container.modal {
+  display: flex !important;
+  @include flex-center;
+}
+
+.modal-content {
+  flex-direction: row;
+  border: none;
+
+  .image-view {
+    width: 500px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+    img {
+      height: 500px;
+    }
+  }
+
+  .text-content {
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      border-bottom: 1px solid #F8FAFB;
+
+      .title {
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      max-width: 400px;
+
+      .description {
+        padding: 20px 30px;
+        font-size: 14px;
+        color: $primary-font-color;
+      }
+
+      .date {
+        padding: 10px 30px;
+        text-align: right;
+        font-size: 12px;
+        width: 100%;
+        border-top: 1px solid #F8FAFB;
+        color: $secondary-font-color;
+      }
+    }
+  }
+}

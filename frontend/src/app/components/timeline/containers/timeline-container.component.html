@@ -1,0 +1,16 @@
+<div class="main-container">
+  <div class="top-section">
+    <app-timeline-sidebar>
+    </app-timeline-sidebar>
+
+    <app-event-preview
+      [event]="selectedEvent"
+    >
+    </app-event-preview>
+  </div>
+  <app-timeline
+    [events]="events"
+    [selectedEvent]="selectedEvent"
+    (eventSelect)="onEventSelect($event)"
+  ></app-timeline>
+</div>

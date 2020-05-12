@@ -1,0 +1,72 @@
+<div class="main-wrap">
+
+  <div class="logo" [routerLink]="['']">
+    <img *ngIf="isSignInViewActive" src="../../../../assets/media/logo.png">
+    <img *ngIf="!isSignInViewActive" src="../../../../assets/media/logo-white.png">
+  </div>
+
+  <mat-icon
+    aria-hidden="false"
+    aria-label="close-icon"
+    class="close-icon"
+    [class.white-icon]="isSignInViewActive"
+    [routerLink]="['']"
+  >
+    close
+  </mat-icon>
+
+  <div
+    class="sign-in-text auth-text-container"
+    *ngIf="!isSignInViewActive"
+    [class.sign-up-text-animation]="isSignInViewActive === false"
+
+  >
+    <div class="text-wrapper">
+      <h3>One Of Us?</h3>
+      <p>If you already have an account, just sign in. We've missed you!</p>
+    </div>
+  </div>
+
+  <div
+    [class.color-container-slide-right-animation]="isSignInViewActive"
+    [class.color-container-slide-left-animation]="isSignInViewActive === false"
+    class="color-container"
+  >
+    <button
+      mat-raised-button
+      class="auth-btn"
+      (click)="toggleAuthButton()"
+    >
+      {{isSignInViewActive ? "Sign Up" : "Log In"}}
+    </button>
+  </div>
+
+  <div
+    class="sign-up-wrap"
+    *ngIf="!isSignInViewActive"
+    [class.sign-up-wrap-animation]="isSignInViewActive === false"
+  >
+    <kst-tid-sign-up></kst-tid-sign-up>
+  </div>
+
+  <div
+    class="sign-in-wrap"
+    *ngIf="isSignInViewActive"
+    [class.sign-in-wrap-animation]="isSignInViewActive"
+  >
+    <kst-tid-sign-in></kst-tid-sign-in>
+  </div>
+
+  <div
+    class="sign-up-text auth-text-container"
+    *ngIf="isSignInViewActive"
+    [class.sign-in-text-animation]="isSignInViewActive"
+  >
+    <div class="text-wrapper">
+      <h3>New here?</h3>
+      <p>Sign up and discover a great amount of new opportunities!</p>
+    </div>
+  </div>
+
+
+</div>

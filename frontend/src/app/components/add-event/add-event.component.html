@@ -1,0 +1,101 @@
+<div class="modal-header">
+
+  <h5 class="modal-title">Add Event</h5>
+
+  <button
+    type="button"
+    class="close"
+    data-dismiss="modal"
+    aria-label="Close"
+    (click)="onClose()"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<form
+  class="add-event-form"
+  [formGroup]="form"
+>
+
+<div class="modal-body">
+    <div>
+      <mat-form-field appearance="standard">
+        <mat-label>Event title</mat-label>
+        <input
+          matInput
+          placeholder="Enter event title"
+          formControlName="title"
+          [errorStateMatcher]="errorMatcher"
+          required
+        >
+        <mat-error
+          *ngIf="form.get('title').hasError('required')"
+        >
+          Title is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          [errorStateMatcher]="errorMatcher"
+          formControlName="date"
+          placeholder="Choose a date"
+          required
+        >
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error
+          *ngIf="form.get('date').hasError('required')"
+        >
+          Date is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field>
+        <mat-label>Describe your event</mat-label>
+        <textarea
+          matInput
+          placeholder="Describe your event"
+          formControlName="description"
+          required
+          [errorStateMatcher]="errorMatcher"
+        ></textarea>
+        <mat-error
+          *ngIf="form.get('description').hasError('required')"
+        >
+           Description is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+    </div>
+</div>
+
+<div class="modal-footer">
+
+  <button
+    mat-raised-button
+    type="button"
+    class="button-outline-secondary"
+    data-dismiss="modal"
+    (click)="onClose()"
+  >
+    Close
+  </button>
+
+  <button
+    mat-raised-button
+    type="submit"
+    class="button-primary"
+    (click)="onSave()"
+  >
+    Save event
+  </button>
+</div>
+</form>

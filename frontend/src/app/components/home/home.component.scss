@@ -1,0 +1,38 @@
+@import "../../../assets/styles/variables";
+@import "../../../assets/styles/mixins";
+
+.main-wrap {
+  height: 100%;
+  width: 100%;
+  background-image: url('../../../assets/media/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  @include flex-center;
+
+  .cta-box {
+    width: 60%;
+    @include flex-center;
+    text-align: center;
+    color: white;
+  }
+
+  .header {
+    font-size: 3.5rem;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+  }
+
+  .subheader {
+    font-weight: lighter;
+    line-height: 1.5;
+  }
+
+  .home-button {
+    margin-top: 10px;
+    padding: 8px 50px;
+    background-color: white;
+    color: $primary-font-color;
+    font-size: 1rem;
+  }
+}

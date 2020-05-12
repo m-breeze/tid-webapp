@@ -1,0 +1,36 @@
+<div class="d-flex flex-row header-container">
+  <div class="logo">
+    <img src="../../../assets/media/logo.png">
+  </div>
+
+    <kst-tid-header-buttons *ngIf="isLoggedIn">
+
+    </kst-tid-header-buttons>
+
+  <div class="right-wrap">
+    <button
+      mat-button
+      class="button-outline-secondary"
+      *ngIf="!isLoggedIn"
+      [routerLink]="['/authentication']"
+      [queryParams]="{login: true}"
+    >
+      Log In
+    </button>
+
+    <button
+      mat-raised-button
+      color="accent"
+      class="button-primary"
+      *ngIf="!isLoggedIn"
+      [routerLink]="['/authentication']"
+    >
+      Start for free
+    </button>
+
+    <kst-tid-navigation *ngIf="isLoggedIn">
+
+    </kst-tid-navigation>
+  </div>
+
+</div>

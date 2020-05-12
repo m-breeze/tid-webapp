@@ -1,0 +1,9 @@
+<div class="timeline-container">
+    <app-event
+      *ngFor="let event of events"
+      [event]="event"
+      [isActive]="selectedEvent.id === event.id"
+      (click)="onEventSelect(event)"
+    >
+    </app-event>
+</div>

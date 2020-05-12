@@ -1,0 +1,15 @@
+<div class="event-container" [class.active]="isActive">
+  <div class="inner-container">
+    <div class="date-container">
+      <p class="day">{{event.date | date:'d'}}</p>
+      <div class="month-year">
+        <p class="month">{{event.date | date:'MMMM'}}</p>
+        <p class="year">{{event.date | date:'yyyy'}}</p>
+      </div>
+    </div>
+    <div class="content">
+      <p class="title">{{event.title}}</p>
+      <p class="description">{{event.description}}</p>
+    </div>
+  </div>
+</div>

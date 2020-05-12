@@ -1,0 +1,10 @@
+@import '../../../../assets/styles/variables';
+
+.main-container {
+  height: calc(100vh - #{$header-height});
+}
+
+.top-section {
+  height: 60vh;
+  display: flex;
+}

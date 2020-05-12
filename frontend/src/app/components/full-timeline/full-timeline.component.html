@@ -1,0 +1,46 @@
+<div class="main-container">
+  <div class="timeline-container">
+    <div
+      class="timeline-ticks"
+    >
+      <ng-container *ngFor="let tick of timelineTicksDates; let i = index">
+        <div
+          class="timeline-tick"
+          [style.left]="tick.leftPosition + '%'"
+        >
+          <label class="month">{{tick.date | date:'MMMM'}}</label>
+          <label class="year">{{tick.date | date:'yyyy'}}</label>
+        </div>
+      </ng-container>
+
+    </div>
+    <div class="timeline">
+    </div>
+  </div>
+  <div class="events-container">
+    <div class="timelinebox"
+         *ngFor="let event of events$ | async; let i = index"
+         [style.width]="blockWidth+'px'"
+         [style.left]="event.leftPosition+'%'"
+         [style.zIndex]="event.zIndex"
+    >
+      <div class="dashed-line" [style.paddingTop]="event.topPosition+'px'"></div>
+      <div class="event-box" (click)="viewEvent(event)">
+        <button class="delete-btn" (click)="onDelete(event.id); $event.stopPropagation()">
+          <i class="fas fa-times"></i>
+        </button>
+        <div
+          class="thumbnail"
+           [style.backgroundImage]="'url(' + (event.img ? event.img : '/assets/media/event-icon.jpg') + ')'"
+        >
+        </div>
+        <div class="text">
+          <p class="date">{{event.date | date:'d MMMM yyyy'}}</p>
+          <p class="title">{{event.title}}</p>
+          <p class="description">{{event.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

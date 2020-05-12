@@ -1,0 +1,146 @@
+@import '../../../assets/styles/variables';
+
+.timeline-ticks {
+  width: calc(100vw - 240px);
+  position: relative;
+  height: 60px;
+
+  .timeline-tick {
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    padding: 0 10px;
+    border-left: 1px solid $secondary-color;
+
+    &::before {
+      content: '';
+      height: 10px;
+      width: 10px;
+      background-color: $secondary-color;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-55%);
+      border-radius: 50%;
+    }
+
+    label {
+      display: block;
+    }
+
+    .month {
+      font-size: 12px;
+      color: $primary-font-color;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+    .year {
+      font-size: 10px;
+      color: $primary-font-color;
+    }
+
+  }
+}
+.main-container {
+  padding-top: 30px;
+  margin: 0 15px;
+}
+
+.timeline {
+  height: 8px;
+  background-color: $primary-color;
+  border-radius: 8px;
+  margin: 0 -10px;
+}
+
+.events-container {
+  margin: 0 20px;
+  position: relative;
+  width: calc(100vw - 240px);
+  height: calc(100vh - 300px);
+  box-sizing: border-box;
+}
+.timelinebox {
+  position: absolute;
+
+  .dashed-line {
+    border-left: 1px lighten($primary-color, 20%) dashed;
+  }
+}
+
+.event-box {
+  height: 75px;
+  width: 200px;
+  background-color: white;
+  box-shadow: $secondary-button-shadow;
+  display: flex;
+  position: relative;
+  border-radius: 4px;
+
+  .delete-btn {
+    padding: 0px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    border: none;
+    background-color: $secondary-color;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    transform: translate(30%, -30%);
+
+    i {
+      font-size: 10px;
+      color: white;
+    }
+
+    &:hover {
+      background-color: $warn-color;
+      box-shadow: $secondary-button-shadow;
+    }
+  }
+
+  .thumbnail {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    height: 75px;
+    width: 50px;
+    background-size: cover;
+    background-position: center;
+  }
+  .text {
+    padding: 5px 15px;
+
+    p {
+      margin-bottom: 0px;
+    }
+
+    .date {
+      font-size: 10px;
+      border-bottom: 1px solid $secondary-color;
+      color: $primary-color;
+      margin-bottom: 5px;
+    }
+
+    .title {
+      font-size: 12px;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 120px;
+      text-overflow: ellipsis;
+    }
+
+    .description {
+      font-size: 10px;
+      width: 120px;
+      height: 24px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}

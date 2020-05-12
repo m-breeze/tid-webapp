@@ -1,0 +1,21 @@
+<div class="preview-container" *ngIf="event">
+  <div class="event-container">
+    <div class="content">
+      <p class="title">{{event.title}}</p>
+      <p class="description">{{event.description}}</p>
+    </div>
+    <div class="date-container">
+      <p class="day">{{event.date | date:'d'}}</p>
+      <div class="month-year">
+        <p class="month">{{event.date | date:'MMMM'}}</p>
+        <p class="year">{{event.date | date:'yyyy'}}</p>
+      </div>
+    </div>
+  </div>
+
+
+  <button mat-button class="button-outline-secondary">
+    Edit
+  </button>
+
+</div>

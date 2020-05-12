@@ -1,0 +1,16 @@
+.modal-body {
+  padding: 10px 10%;
+}
+
+.add-event-form {
+  width: 100%;
+
+  mat-form-field {
+    width: 100%;
+
+    textarea {
+      min-height: 100px;
+    }
+  }
+}
+
